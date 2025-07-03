@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "44bf7c9f7559289c",
+        "id": "ec5de5aa60e5739f",
         "type": "tabs",
         "children": [
           {
-            "id": "b265b3787f56fb45",
+            "id": "65b573ec626f9f4f",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -146,13 +146,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01_Diary/2025/2020507/2025-07-02.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-07-02 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -202,13 +201,13 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "3f9688d5e2e4763b",
+  "active": "65b573ec626f9f4f",
   "lastOpenFiles": [
+    "01_Diary/2025/2020507/2025-07-01.md",
+    "01_Diary/2025/2020507/2025-07-02.md",
     "01_Diary/2025/2020507/2025-07-03.md",
     "03_Template/01_DiaryTemplate.md.md",
     "README.md",
-    "01_Diary/2025/2020507/2025-07-02.md",
-    "01_Diary/2025/2020507/2025-07-01.md",
     "01_Diary/2025/2020507/2025-07-03 星期四.md",
     "01_Diary/2025/2020507/未命名.md",
     "03_Template",
