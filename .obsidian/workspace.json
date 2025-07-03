@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "bf9152823a6f2bb5",
+        "id": "752815ea64656fa4",
         "type": "tabs",
         "children": [
           {
-            "id": "1c92c47404fbe1ef",
+            "id": "94db82e2b53c5810",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -201,12 +201,12 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "8d437d29d4492d84",
+  "active": "3f9688d5e2e4763b",
   "lastOpenFiles": [
     "03_Template/01_DiaryTemplate.md.md",
-    "01_Diary/2025/2020507/2025-07-01.md",
-    "01_Diary/2025/2020507/2025-07-02.md",
     "01_Diary/2025/2020507/2025-07-03.md",
+    "01_Diary/2025/2020507/2025-07-02.md",
+    "01_Diary/2025/2020507/2025-07-01.md",
     "01_Diary/2025/2020507/2025-07-03 星期四.md",
     "01_Diary/2025/2020507/未命名.md",
     "03_Template",
