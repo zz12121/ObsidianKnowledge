@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e1fdff24cd001c8e",
+        "id": "a2d23d02959d5c2c",
         "type": "tabs",
         "children": [
           {
-            "id": "8dcdebfc65e58735",
+            "id": "340df224eaf3429c",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -80,8 +80,7 @@
               "title": "Recent Files"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -185,23 +184,36 @@
   "left-ribbon": {
     "hiddenItems": {
       "obsidian-git:Open Git source control": false,
-      "templater-obsidian:Templater": false,
+      "daily-notes:打开/创建今天的日记": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "markdown-importer:打开 Markdown 格式转换器": false,
+      "templater-obsidian:Templater": false,
       "obsidian42-brat:BRAT": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-kanban:创建新看板": false,
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "8dcdebfc65e58735",
+  "active": "3f9688d5e2e4763b",
   "lastOpenFiles": [
-    "README.md"
+    "Diary/2025/2020507/2025-07-02.md",
+    "Learn/Language/English",
+    "Learn/Language",
+    "Learn/Develop/Python",
+    "Learn/Develop/Java",
+    "Learn/Develop/DataStructure",
+    "Learn/Develop/Algo",
+    "Learn/Develop",
+    "Diary/2025/2020507/2025-07-01.md",
+    "README.md",
+    "Diary/2025/2020507/2025-07-03.md",
+    "Diary/2025/2020507",
+    "Diary/2025",
+    "Learn"
   ]
 }
