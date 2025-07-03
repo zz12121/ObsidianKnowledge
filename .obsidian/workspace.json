@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1eebe911eb90359e",
+        "id": "bf9152823a6f2bb5",
         "type": "tabs",
         "children": [
           {
-            "id": "2dc82e9d53e1dd25",
+            "id": "1c92c47404fbe1ef",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -84,7 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 276.5
   },
   "right": {
     "id": "476aa11120a00d12",
@@ -196,25 +196,30 @@
       "obsidian42-brat:BRAT": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-kanban:创建新看板": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "random-note:开始漫游笔记": false,
+      "workspaces:管理工作区布局": false
     }
   },
-  "active": "3f9688d5e2e4763b",
+  "active": "8d437d29d4492d84",
   "lastOpenFiles": [
-    "未命名看板.md",
-    "Diary/2025/2020507/2025-07-03.md",
-    "Diary/2025/2020507/2025-07-01.md",
-    "Diary/2025/2020507/2025-07-02.md",
-    "Learn/Language/English",
-    "Learn/Language",
-    "Learn/Develop/Python",
-    "Learn/Develop/Java",
-    "Learn/Develop/DataStructure",
-    "Learn/Develop/Algo",
-    "Learn/Develop",
+    "03_Template/01_DiaryTemplate.md.md",
+    "01_Diary/2025/2020507/2025-07-01.md",
+    "01_Diary/2025/2020507/2025-07-02.md",
+    "01_Diary/2025/2020507/2025-07-03.md",
+    "01_Diary/2025/2020507/2025-07-03 星期四.md",
+    "01_Diary/2025/2020507/未命名.md",
+    "03_Template",
     "README.md",
-    "Diary/2025/2020507",
-    "Diary/2025",
-    "Learn"
+    "未命名看板.md",
+    "02_Learn/Language/English",
+    "02_Learn/Language",
+    "02_Learn/Develop/Python",
+    "02_Learn/Develop/Java",
+    "02_Learn/Develop/DataStructure",
+    "02_Learn/Develop/Algo",
+    "02_Learn/Develop",
+    "01_Diary/2025/2020507",
+    "01_Diary/2025"
   ]
 }
