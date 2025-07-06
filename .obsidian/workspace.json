@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c4150852e25b7dcc",
+        "id": "7b398371f6a85901",
         "type": "tabs",
         "children": [
           {
-            "id": "0408c0a513018e51",
+            "id": "dbb3584268379d70",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -200,8 +200,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0408c0a513018e51",
+  "active": "dbb3584268379d70",
   "lastOpenFiles": [
+    "01_Diary/2025/2020507/2025-07-06.md",
     "01_Diary/2025/2020507/2025-07-05.md",
     "03_Template/01_DiaryTemplate.md.md",
     "01_Diary/2025/2020507/2025-07-04.md",
