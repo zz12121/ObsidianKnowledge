@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7b398371f6a85901",
+        "id": "b64df9a187e2672c",
         "type": "tabs",
         "children": [
           {
-            "id": "dbb3584268379d70",
+            "id": "8325789b97fad68c",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -200,10 +200,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "dbb3584268379d70",
+  "active": "8325789b97fad68c",
   "lastOpenFiles": [
-    "01_Diary/2025/2020507/2025-07-06.md",
     "01_Diary/2025/2020507/2025-07-05.md",
+    "01_Diary/2025/2020507/2025-07-07.md",
+    "01_Diary/2025/2020507/2025-07-06.md",
     "03_Template/01_DiaryTemplate.md.md",
     "01_Diary/2025/2020507/2025-07-04.md",
     "01_Diary/2025/2020507/2025-07-01.md",
