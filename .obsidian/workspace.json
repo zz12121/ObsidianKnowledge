@@ -11,10 +11,14 @@
             "id": "075aface8a008cb8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "01_Diary/2025/2020507/2025-07-07.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "2025-07-07"
             }
           }
         ]
