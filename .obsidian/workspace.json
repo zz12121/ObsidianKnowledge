@@ -11,14 +11,10 @@
             "id": "075aface8a008cb8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "新标签页"
             }
           }
         ]
@@ -206,10 +202,10 @@
   },
   "active": "075aface8a008cb8",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
     "01_Diary/2025/2020507/2025-07-07.md.BASE.md",
     "01_Diary/2025/2020507/2025-07-07.md.REMOTE.md",
     "01_Diary/2025/2020507/2025-07-07.md.LOCAL.md",
-    "conflict-files-obsidian-git.md",
     "01_Diary/2025/2020507/2025-07-05.md",
     "01_Diary/2025/2020507/2025-07-07.md",
     "01_Diary/2025/2020507/2025-07-06.md",
