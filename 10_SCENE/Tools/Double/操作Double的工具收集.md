@@ -1,6 +1,5 @@
 #tool
-
-### 1.需求：解决double转string 有.0 
+# 1.需求：解决double转string 有.0 
 在 Java 中，当 `double` 类型数值的小数部分为 0（如 `123.0`）时，转换为 `String` 会保留 `.0`（例如 `"123.0"`），同时保留有效小数位（如 `3.23423` 不受影响）
 <mark style="background: #FF5582A6;">方式：</mark> 使用 `DecimalFormat` 模式匹配
 通过 `"0.##"` 格式模式，自动省略整数的小数部分 `.0`，保留非零小数位：
