@@ -15,5 +15,6 @@ String result2 = df.format(num2); // 输出 "3.23423"
 `0`：强制显示数字位（整数部分至少一位，避免 `.123` 格式）。
 **局限性**：
 若返回要求不能是科学计数法（如 `1.23E5`），优先用 `BigDecimal` 的 `toPlainString()` 转换。
-解决方式：[高精度的数值转 String，返回不是科学计数法](../Bigdecimal/操作Bigdecimal的工具收集.md#1.需求：高精度的数值转String，返回不是科学计数法)
+解决方式：[操作Bigdecimal的工具收集](../Bigdecimal/操作Bigdecimal的工具收集.md)
+
 
