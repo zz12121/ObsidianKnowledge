@@ -1,9 +1,10 @@
 ---
-Title: Java 基础核心要点-String相关
+Title: Java 基础核心类-String相关
 Category: Java
 tags:
   - java
   - 数据类型
+  - todo
 ---
 ## String
 
@@ -80,9 +81,6 @@ public int hashCode() {
     return h;
 }
 ```
-
-
-
 
 
 ### String 能存储多少字符

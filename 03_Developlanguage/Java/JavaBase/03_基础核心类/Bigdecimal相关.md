@@ -1,5 +1,5 @@
 ---
-Title: Java 基础核心要点-Bigdecimal相关
+Title: Java 基础核心类-Bigdecimal相关
 Category: Java
 tags:
   - java
