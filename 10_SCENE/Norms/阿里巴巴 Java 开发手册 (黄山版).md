@@ -2,8 +2,8 @@
 Title: 阿里巴巴 Java 开发手册 (黄山版)
 Category: 计算机书籍
 tags:
-  - book
   - java
+  - book
 ---
 ## 前言
 

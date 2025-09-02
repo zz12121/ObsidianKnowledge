@@ -2,8 +2,8 @@
 Title: 解密类加载机制：深入理解 JVM 如何加载你的代码
 Category: Java
 tags:
-  - JVM
   - java
+  - JVM
 ---
 
 
