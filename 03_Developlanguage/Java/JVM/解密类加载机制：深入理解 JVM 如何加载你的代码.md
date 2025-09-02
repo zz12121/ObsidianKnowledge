@@ -1,15 +1,9 @@
 ---
 Title: 解密类加载机制：深入理解 JVM 如何加载你的代码
 Category: Java
-Tags:
+tags:
   - JVM
-Head:
-  - - meta
-    - Name: keywords
-      Content: Java, JVM, 对象结构, 对象布局, 对象头, Class Pointer, Mark Word, 指针压缩
-  - - meta
-    - Name: description
-      Content: 全网最全的 Java JVM 知识点总结，让天下没有难学的八股文！
+  - java
 ---
 
 

@@ -1,14 +1,8 @@
 ---
 Title: Java 基础核心要点
 Category: Java
-Tags:
-Head:
-  - - meta
-    - Name: keywords
-      Content: Integer 缓存, BigDecimal, String, Object, 数组, hashcode, equals, 哈希冲突, final, static, trancient, 值传递, 引用传递, 序列化和反序列化, LocalDate
-  - - meta
-    - Name: description
-      Content: 全网最全的 Java 知识点总结，让天下没有难学的八股文！
+tags:
+  - java
 ---
 ## Integer 缓存池
 

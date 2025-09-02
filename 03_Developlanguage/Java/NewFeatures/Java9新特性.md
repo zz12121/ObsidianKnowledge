@@ -1,16 +1,9 @@
 ---
 Title: Java 9 新特性
 Category: Java
-Tags:
-  - 版本新特性
+tags:
   - java
-Head:
-  - - meta
-    - Name: keywords
-      Content: Java, 版本新特性, Java 9
-  - - meta
-    - Name: description
-      Content: 全网最全的 Java 版本新特性知识点总结，让天下没有难学的八股文！
+  - features
 ---
 Java 9 新增了很多特性，针对较为突出的便于理解的特性进行说明。除了下面罗列出的新特性之外还有一些其他的内容，这些内容有的不重要或者使用较少，所以没有罗列出来。
 
