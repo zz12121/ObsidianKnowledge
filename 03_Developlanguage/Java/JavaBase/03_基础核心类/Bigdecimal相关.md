@@ -67,7 +67,7 @@ System.out.println(x.compareTo(y));// 0
 
 《阿里巴巴 Java 开发手册》对这部分内容也有提到，如下图所示。
 
-![](https://seven97-blog.oss-cn-hangzhou.aliyuncs.com/imgs/202406202139919.png)
+![|668x178](https://seven97-blog.oss-cn-hangzhou.aliyuncs.com/imgs/202406202139919.png)
 
 ```java
 public static BigDecimal valueOf(double val) {
