@@ -7,7 +7,7 @@ tags:
 ---
 在Java中，我们一般都会使用到Map，比如HashMap这样的具体实现。更高级一点，我们可能会使用WeakHashMap。  
   
-WeakHashMap其实和HashMap大多数行为是一样的，只是WeakHashMap不会阻止GC回收key对象（不是value），那么WeakHashMap是怎么做到的呢，这就是我们研究的主要问题。  
+WeakHashMap其实和HashMap大多数行为是一样的，只是WeakHashMap不会阻止GC回收key对象（不是value），那么WeakHashMap是怎么做到的呢，这就是我们研究的主要问题。 
   
 在开始WeakHashMap之前，我们先要对弱引用有一定的了解。  
   
