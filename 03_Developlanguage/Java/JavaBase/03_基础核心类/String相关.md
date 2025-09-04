@@ -264,8 +264,6 @@ class Demo {
 }
 ```
 
-
-
 反编译后的 Java 代码
 
 ```java
@@ -444,8 +442,7 @@ private int newCapacity(int minCapacity) {
 但这也是在非循环体内，少数拼接的情况，当多大量拼接，还是建议使用 StringBuilder
 
 
-
-### String. Intern ()
+### String. Intern ()方法
 
 调用字符串对象的 intern 方法，会将该字符串对象尝试放入到串池中
 
@@ -457,7 +454,7 @@ private int newCapacity(int minCapacity) {
 
 注意：此时如果调用 intern 方法成功，堆内存与串池中的字符串对象是同一个对象；如果失败，则不是同一个对象
 
-#### 例 1：
+##### 例 1：
 
 ```java
 //"a" "b" 被放入串池中，str则存在于堆内存之中
@@ -471,7 +468,7 @@ System.out.println(str == st2);
 System.out.println(str == str3);
 ```
 
-#### 例 2：
+##### 例 2：
 
 ```java
 //此处创建字符串对象"ab"，因为串池中还没有"ab"，所以将其放入串池中
@@ -489,8 +486,7 @@ System.out.println(str2 == str3);
 ```
 
 
-
-### 自定义一个 String 类
+### 如何自定义一个 String 类
 
 #### 包名不为 java. Lang
 
@@ -539,7 +535,6 @@ public final class String {
 ```
 
 可以正常使用，但在使用时有有用到 java. Lang 下的 String，那就需要区别包名使用，即其中一个使用全类名表示，一般生产中不会去自定义一个与 JDK 类库中同名的类，这里只作为拓展了解即可~
-
 
 
 #### 包名为 java. Lang. String
@@ -596,8 +591,6 @@ public final class String {
 
 }
 ```
-
-
 
 ##### String 类下写 main 方法
 
