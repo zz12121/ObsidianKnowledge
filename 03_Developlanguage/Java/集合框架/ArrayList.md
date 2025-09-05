@@ -4,7 +4,6 @@ Category: Java
 tags:
   - java
   - 集合框架
-  - todo
 ---
 从名字就可以看得出来，ArrayList 实现了 List 接口，并且是基于数组实现的。  
   
@@ -643,5 +642,82 @@ ArrayList还给我们提供了将底层数组的容量调整为当前列表保�
 ```
 
 ### 12、遍历时删除（添加）常见陷阱
+#### for循环遍历list
+删除某个元素后，list的大小发生了变化，而索引也在变化，所以会导致遍历的时候漏掉某些元素。比如当删除第1个元素后，继续根据索引访问第2个元素时，因为删除的关系后面的元素都往前移动了一位，所以实际访问的是第3个元素。因此，这种方式可以用在删除特定的一个元素时使用，但不适合循环删除多个元素时使用。
+
+```java
+for(int i=0;i<list.size();i++){
+    if(list.get(i).equals("del"))
+        list.remove(i);
+}
+```
+
+解决办法：
+
+//从list最后一个元素开始遍历
+
+```java
+//从list最后一个元素开始遍历
+for(int i=list.size()-1;i>+0;i--){
+    if(list.get(i).equals("del"))
+        list.remove(i);
+}
+```
+
+#### 增强for循环
+删除元素后继续循环会抛异常java.util.ConcurrentModificationException，因为元素在使用的时候发生了并发的修改
+
+```java
+for(String x:list){
+    if(x.equals("del"))
+        list.remove(x);
+}
+```
+
+解决方法：但只能删除一个"del"元素
+
+```java
+//解决：删除完毕马上使用break跳出，则不会触发报错
+for(String x:list){
+    if (x.equals("del")) {
+         list.remove(x);
+         break;
+    }
+}
+```
+
+#### iterator遍历
+这种方式可以正常的循环及删除。但要注意的是，使用iterator的remove方法，如果用list的remove方法同样会报上面提到的ConcurrentModificationException错误。
+
+```java
+Iterator<String> it = list.iterator();
+while(it.hasNext()){
+    String x = it.next();
+    if(x.equals("del")){
+        it.remove();
+    }
+}
+```
 
 ### 13、FailFast机制
+上面提到的ConcurrentModificationException异常，都是有这个机制的存在，通过记录modCount参数来实现。在面对并发的修改时，迭代器很快就会完全失败，而不是冒着在将来某个不确定时间发生任意不确定行为的风险。
+
+fail-fast 机制是java集合(Collection)中的一种错误机制。当多个线程对同一个集合的内容进行操作时，就可能会产生fail-fast事件。例如：当某一个线程A通过iterator去遍历某集合的过程中，若该集合的内容被其他线程所改变了；那么线程A遍历集合时，即出现expectedModCount != modCount 时，就会抛出ConcurrentModificationException异常，产生fail-fast事件。
+
+```java
+if (modCount != expectedModCount)
+    throw new ConcurrentModificationException();
+```
+
+![[09_Attachments/Java_ArrayList_004.png]]
+fail-fast 机制并不保证在不同步的修改下抛出异常，他只是尽最大努力去抛出，所以这种机制一般仅用于检测 bug
+
+#### 解决 fail-fast的解决方案：
+1. 在遍历过程中所有涉及到改变modCount值得地方全部加上synchronized或者直接使用Collections.synchronizedList，这样就可以解决(实际上Vector结构就是这样实现的)。但是不推荐，因为增删造成的同步锁可能会阻塞遍历操作。
+
+```java
+List<Integer> arrsyn = Collections.synchronizedList(arr);
+```
+
+2. 使用CopyOnWriteArrayList来替换ArrayList。推荐使用该方案。CopyOnWriteArrayList是兼顾了并发的线程安全
+
