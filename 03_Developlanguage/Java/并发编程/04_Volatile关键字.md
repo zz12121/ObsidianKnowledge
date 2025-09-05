@@ -16,7 +16,7 @@ tags:
 
 写一段简单的 Java 代码，声明一个 volatile 变量，并赋值。
 
-```
+```java
 public class Test {
     private volatile int a;
     public void update() {
