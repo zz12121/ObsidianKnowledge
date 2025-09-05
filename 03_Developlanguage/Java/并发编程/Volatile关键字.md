@@ -275,7 +275,8 @@ add lock, inc output:1000
 add AtomicInteger, inc output:1000  
 ```  
   
-## volatile 实现单例模式的双重锁  
+## volatile 的应用场景
+### 1、volatile 实现单例模式的双重锁  
   
 下面是一个使用"双重检查锁定"（double-checked locking）实现的单例模式（Singleton Pattern）的例子。  
   
@@ -354,6 +355,116 @@ public static Penguin getInstance() {
 这样就会导致线程 B 拿到一个不完整的 Penguin 对象，可能会出现空指针异常或者其他问题。  
   
 于是，我们可以为 m_penguin 变量添加 volatile 关键字，来禁止指令重排序，确保对象的初始化完成后再将其赋值给 m_penguin。  
+
+### 2、状态标志
+
+也许实现 volatile 变量的规范使用仅仅是使用一个布尔状态标志，用于指示发生了一个重要的一次性事件，例如完成初始化或请求停机。
+
+```java
+volatile boolean shutdownRequested;
+......
+public void shutdown() { shutdownRequested = true; }
+public void doWork() { 
+    while (!shutdownRequested) { 
+        // do stuff
+    }
+}
+```
+
+### 3、一次性安全发布(one-time safe publication)
+
+缺乏同步会导致无法实现可见性，这使得确定何时写入对象引用而不是原始值变得更加困难。在缺乏同步的情况下，可能会遇到某个对象引用的更新值(由另一个线程写入)和该对象状态的旧值同时存在。(这就是造成著名的双重检查锁定(double-checked-locking)问题的根源，其中对象引用在没有同步的情况下进行读操作，产生的问题是您可能会看到一个更新的引用，但是仍然会通过该引用看到不完全构造的对象)。
+
+```java
+public class BackgroundFloobleLoader {
+    public volatile Flooble theFlooble;
+ 
+    public void initInBackground() {
+        // do lots of stuff
+        theFlooble = new Flooble();  // this is the only write to theFlooble
+    }
+}
+ 
+public class SomeOtherClass {
+    public void doWork() {
+        while (true) { 
+            // do some stuff...
+            // use the Flooble, but only if it is ready
+            if (floobleLoader.theFlooble != null) 
+                doSomething(floobleLoader.theFlooble);
+        }
+    }
+}
+```
+
+### 4、独立观察(independent observation)
+
+安全使用 volatile 的另一种简单模式是定期 发布 观察结果供程序内部使用。例如，假设有一种环境传感器能够感觉环境温度。一个后台线程可能会每隔几秒读取一次该传感器，并更新包含当前文档的 volatile 变量。然后，其他线程可以读取这个变量，从而随时能够看到最新的温度值。
+
+```java
+public class UserManager {
+    public volatile String lastUser;
+ 
+    public boolean authenticate(String user, String password) {
+        boolean valid = passwordIsValid(user, password);
+        if (valid) {
+            User u = new User();
+            activeUsers.add(u);
+            lastUser = user;
+        }
+        return valid;
+    }
+}
+```
+
+### 5、volatile bean 模式
+
+在 volatile bean 模式中，JavaBean 的所有数据成员都是 volatile 类型的，并且 getter 和 setter 方法必须非常普通 —— 除了获取或设置相应的属性外，不能包含任何逻辑。此外，对于对象引用的数据成员，引用的对象必须是有效不可变的。(这将禁止具有数组值的属性，因为当数组引用被声明为 volatile 时，只有引用而不是数组本身具有 volatile 语义)。对于任何 volatile 变量，不变式或约束都不能包含 JavaBean 属性。
+
+```java
+@ThreadSafe
+public class Person {
+    private volatile String firstName;
+    private volatile String lastName;
+    private volatile int age;
+ 
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public int getAge() { return age; }
+ 
+    public void setFirstName(String firstName) { 
+        this.firstName = firstName;
+    }
+ 
+    public void setLastName(String lastName) { 
+        this.lastName = lastName;
+    }
+ 
+    public void setAge(int age) { 
+        this.age = age;
+    }
+}
+```
+
+### 6、开销较低的读－写锁策略
+
+volatile 的功能还不足以实现计数器。因为 ++x 实际上是三种操作(读、添加、存储)的简单组合，如果多个线程凑巧试图同时对 volatile 计数器执行增量操作，那么它的更新值有可能会丢失。 如果读操作远远超过写操作，可以结合使用内部锁和 volatile 变量来减少公共代码路径的开销。 安全的计数器使用 synchronized 确保增量操作是原子的，并使用 volatile 保证当前结果的可见性。如果更新不频繁的话，该方法可实现更好的性能，因为读路径的开销仅仅涉及 volatile 读操作，这通常要优于一个无竞争的锁获取的开销。
+
+```java
+@ThreadSafe
+public class CheesyCounter {
+    // Employs the cheap read-write lock trick
+    // All mutative operations MUST be done with the 'this' lock held
+    @GuardedBy("this") private volatile int value;
+ 
+    public int getValue() { return value; }
+ 
+    public synchronized int increment() {
+        return value++;
+    }
+}
+```
+
   
 ## 小结  
   
@@ -364,5 +475,4 @@ volatile 可以保证线程可见性且提供了一定的有序性，但是无�
 - 它确保指令重排序时不会把其后面的指令排到内存屏障之前的位置，也不会把前面的指令排到内存屏障的后面；即在执行到内存屏障这句指令时，在它前面的操作已经全部完成；  
 - 它会强制将对缓存的修改操作立即写入主存；  
 - 如果是写操作，它会导致其他 CPU 中对应的缓存行无效。  
-  
-最后，我们学习了 volatile 不适用的场景，以及解决的方法，并解释了双重检查锁定实现的单例模式为何需要使用 volatile。  
+
