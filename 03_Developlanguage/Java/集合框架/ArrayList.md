@@ -709,7 +709,7 @@ if (modCount != expectedModCount)
     throw new ConcurrentModificationException();
 ```
 
-![[09_Attachments/Java_ArrayList_004.png]]
+![[09_Attachments/Java/并发编程/Java_ArrayList_004.png]]
 fail-fast 机制并不保证在不同步的修改下抛出异常，他只是尽最大努力去抛出，所以这种机制一般仅用于检测 bug
 
 #### 解决 fail-fast的解决方案：
